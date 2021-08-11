@@ -31,8 +31,8 @@ jobs:
         run: git clone https://github.com/pytest-dev/py && cd py && git checkout 1.4.33 && sudo python2.6 setup.py install && cd ../ && sudo rm -r py
       - name: install pytest
         run: git clone https://github.com/pytest-dev/pytest && cd pytest && git checkout 3.2.5 && sudo python2.6 setup.py install && cd ../ && sudo rm -r pytest
-          #- name: Install Python dependencies
-          #run: sudo pip install -r requirements-test-py26.txt -r requirements-py26.txt -t /usr/lib/python2.6/dist-packages && sudo pip install --no-compile -t /usr/lib/python2.6/dist-packages .
+      - name: Install Python dependencies
+        run: sudo pip install -r requirements-test-py26.txt -r requirements-py26.txt -t /usr/lib/python2.6/dist-packages && sudo pip install --no-compile -t /usr/lib/python2.6/dist-packages .
       - name: Run tests
         run: sudo python2.6 -m pytest
   py27:
