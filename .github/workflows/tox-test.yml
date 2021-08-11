@@ -7,8 +7,17 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Install RPM
+      - name: Update existing dependencies
+        run: sudo apt-get update -y
+      - name: Install system dependencies
         run: sudo apt-get install -y rpm
+        # run: sudo apt-get install -y libkrb5-dev libssl1.0-dev libldap2-dev libsasl2-dev libffi-dev
+      - name: Add Python 2.6 repository
+        run: sudo add-apt-repository -y ppa:deadsnakes/ppa
+      - name: Install Python 2.6
+        run: sudo apt-get install -y python2.6 python2.6-dev
+          #- name: Install RPM
+          #run: sudo apt-get install -y rpm
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
