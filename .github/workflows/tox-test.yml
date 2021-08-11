@@ -6,7 +6,7 @@ jobs:
   py26:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Update existing dependencies
         run: sudo apt-get update -y
       - name: Install system dependencies
