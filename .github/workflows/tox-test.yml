@@ -51,7 +51,7 @@ jobs:
         run: pip install tox
       - name: Run Tox
         run: tox -e static
-  py36-pidiff:
+  pidiff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
